@@ -486,7 +486,7 @@ export interface ApiAppThumbnailAppThumbnail
       true
     >;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'app_name'>;
+    slug: Schema.Attribute.UID<'app_name'> & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
