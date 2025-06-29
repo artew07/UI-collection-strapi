@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "screenshots",
+  "info": {
+    "singularName": "screenshotsapp",
+    "pluralName": "screenshots",
+    "displayName": "Screenshots",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Screenshots": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "application": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::app-thumbnail.app-thumbnail",
+      "inversedBy": "app_screenshots"
+    },
+    "order": {
+      "type": "uid"
+    }
+  }
+}

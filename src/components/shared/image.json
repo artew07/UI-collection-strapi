@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_images",
+  "info": {
+    "displayName": "Image",
+    "icon": "picture",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "pic": {
+      "displayName": "img",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.img"
+    }
+  }
+}

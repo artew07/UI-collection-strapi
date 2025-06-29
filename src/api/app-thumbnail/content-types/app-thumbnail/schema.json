@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "app_thumbnails",
+  "info": {
+    "singularName": "app-thumbnail",
+    "pluralName": "app-thumbnails",
+    "displayName": "Application",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "app_name": {
+      "type": "string"
+    },
+    "preview_images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "app_logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category",
+      "mappedBy": "app_thumbnail"
+    },
+    "app_screenshots": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::screenshotsapp.screenshotsapp",
+      "mappedBy": "application"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "app_name"
+    },
+    "appStoreUrl": {
+      "type": "string",
+      "unique": true
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "app_suggestions",
+  "info": {
+    "singularName": "app-suggestion",
+    "pluralName": "app-suggestions",
+    "displayName": "App Suggestion",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "appName": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "userEmail": {
+      "type": "email",
+      "required": true
+    },
+    "userName": {
+      "type": "string",
+      "required": true
+    },
+    "reviewStatus": {
+      "type": "enumeration",
+      "enum": [
+        "review",
+        "approved",
+        "rejected"
+      ],
+      "default": "review",
+      "required": true
+    },
+    "screenshots": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "submittedAt": {
+      "type": "datetime"
+    }
+  }
+}
